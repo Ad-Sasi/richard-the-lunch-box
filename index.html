@@ -1,23 +1,504 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The Lunch Box — Cuisine indienne à Nantes</title>
-<meta name="description" content="La cuisine indienne de Richard, livrée dans une vraie lunch box. À partir de 8€, 2 rue de la Montagne, 44100 Nantes." />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Lunch Box — cuisine indienne à emporter à Nantes</title>
+<meta name="description" content="Richard cuisine chaque lunch box à la commande : végétarienne ou non, légumes bio et viande locale. À partir de 8 €, 2 rue de la Montagne, 44100 Nantes. 06 65 75 77 18.">
+<meta name="theme-color" content="#F7F1E4">
+
+<meta property="og:type" content="restaurant">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="The Lunch Box">
+<meta property="og:title" content="The Lunch Box — cuisine indienne à emporter à Nantes">
+<meta property="og:description" content="La cuisine indienne de Richard, à emporter rue de la Montagne. À partir de 8 €.">
+<!-- À AJOUTER quand une photo sera disponible : <meta property="og:image" content="https://…/assets/img/og.jpg"> -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>html,body{margin:0;padding:0}*{box-sizing:border-box}a{color:inherit}</style>
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "The Lunch Box",
+  "description": "Cuisine indienne faite maison à emporter, végétarienne et non-végétarienne, à Nantes. Légumes bio et viande locale.",
+  "servesCuisine": ["Indienne", "Indienne du Sud"],
+  "priceRange": "€",
+  "currenciesAccepted": "EUR",
+  "telephone": "+33665757718",
+  "founder": { "@type": "Person", "name": "Richard Balaraj" },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2 rue de la Montagne",
+    "postalCode": "44100",
+    "addressLocality": "Nantes",
+    "addressCountry": "FR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 47.2120517, "longitude": -1.5794874 },
+  "areaServed": { "@type": "City", "name": "Nantes" },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Friday"], "opens": "12:00", "closes": "14:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Thursday", "Sunday"], "opens": "18:00", "closes": "20:30" }
+  ],
+  "hasMenu": {
+    "@type": "Menu",
+    "hasMenuSection": {
+      "@type": "MenuSection",
+      "name": "Lunch box",
+      "hasMenuItem": [
+        { "@type": "MenuItem", "name": "Biryani de poulet", "description": "Riz basmati safrané, poulet mariné au yaourt, oignons frits." },
+        { "@type": "MenuItem", "name": "Dal makhani", "description": "Lentilles noires mijotées toute la nuit, beurre, crème, kasoori methi.", "suitableForDiet": "https://schema.org/VegetarianDiet" },
+        { "@type": "MenuItem", "name": "Curry d’agneau", "description": "Agneau local, sauce tomate-cardamome, riz parfumé." }
+      ]
+    }
+  }
+}
+</script>
 </head>
 <body>
-<div id="root"></div>
-<script type="text/babel" src="v3.jsx"></script>
-<script type="text/babel">
-ReactDOM.createRoot(document.getElementById('root')).render(<window.V3Pattern />);
+
+<!-- Jeu d'icônes : tracé à la main, une seule graisse de trait. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="i-phone" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21.5 16.9v2.8a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.6 2 2 0 0 1 2-2.2h2.8a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/>
+    </g>
+    <g id="i-pin" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 10.5c0 5.7-8 11.5-8 11.5s-8-5.8-8-11.5a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10.3" r="2.9"/>
+    </g>
+    <g id="i-route" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21.4 2.6 2.9 10.2c-.8.3-.8 1.5.1 1.7l7.6 2 2 7.6c.2.9 1.4.9 1.7.1Z"/>
+    </g>
+    <g id="i-camera" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h3l1.8-2.6h6.4L17 7h3a2 2 0 0 1 2 2Z"/><circle cx="12" cy="13.5" r="3.6"/>
+    </g>
+    <g id="i-ext" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 17 17 7M9.5 7H17v7.5"/>
+    </g>
+    <path id="i-star" d="M12 2.4 15 8.5l6.7 1-4.9 4.7 1.2 6.7L12 17.7l-6 3.2 1.2-6.7L2.3 9.5l6.7-1Z" fill="currentColor"/>
+    <path id="i-wa" fill="currentColor" d="M12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.15 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.89A11.82 11.82 0 0 0 12.05 0Zm0 21.79a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26 9.89 9.89 0 0 1 16.88-6.99 9.83 9.83 0 0 1 2.89 7 9.89 9.89 0 0 1-9.89 9.88Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.18.2-.35.22-.65.08-.3-.15-1.25-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.14-.14.3-.35.44-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.62.7.23 1.35.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.12-.28-.2-.57-.35Z"/>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="mark" href="#haut">The&nbsp;Lunch&nbsp;<em>Box</em></a>
+    <nav class="nav" aria-label="Sections du site">
+      <a href="#carte">La carte</a>
+      <a href="#horaires">Horaires</a>
+      <a href="#richard">Richard</a>
+      <a href="#avis">Avis</a>
+      <a href="#venir">Où nous trouver</a>
+    </nav>
+    <a class="btn btn--go" href="tel:+33665757718">
+      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>
+      06 65 75 77 18
+    </a>
+  </div>
+</header>
+
+<main id="haut">
+
+  <!-- ACCUEIL ----------------------------------------------------------- -->
+  <section class="wrap hero">
+    <a class="status" href="#horaires" id="statut" data-open="">
+      <span class="status__dot" aria-hidden="true"></span>
+      <span data-statut-texte>Mardi et vendredi le midi, jeudi et dimanche le soir</span>
+    </a>
+
+    <h1 class="t-hero">Cuisine indienne <em>faite maison</em>, à emporter à Nantes.</h1>
+
+    <div class="hero__grid">
+      <div>
+        <p class="lede muted">Richard cuisine chaque lunch box à la commande — végétarienne ou non,
+          légumes bio et viande locale.</p>
+
+        <dl class="facts">
+          <div><dt>La lunch box</dt><dd class="price">à partir de 8 €</dd></div>
+          <div><dt>À venir chercher</dt><dd>2 rue de la Montagne<br>44100 Nantes</dd></div>
+          <div><dt>Sur commande</dt><dd>Mariages, anniversaires, baptêmes</dd></div>
+        </dl>
+
+        <div class="hero__actions">
+          <a class="btn btn--go" href="tel:+33665757718">
+            <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>
+            Commander · 06 65 75 77 18
+          </a>
+          <a class="btn btn--line" href="#carte">Voir la carte</a>
+        </div>
+      </div>
+
+      <figure class="shot shot--tall">
+        <!-- REMPLACER PAR : <img src="assets/img/lunchbox.jpg" alt="Une lunch box ouverte, riz et curry" width="1000" height="1250"> -->
+        <span class="shot__todo">
+          <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-camera"/></svg>
+          <span>Photo d’une lunch box ouverte</span>
+        </span>
+      </figure>
+    </div>
+  </section>
+
+  <!-- LA CARTE ---------------------------------------------------------- -->
+  <section id="carte" class="band band--paper">
+    <div class="wrap">
+      <h2 class="t-sect">Ce que Richard cuisine</h2>
+      <p class="lede muted" style="margin-top:.85rem">La carte change selon les saisons.
+        Chaque plat existe en version végétarienne ou non.</p>
+
+      <div class="dishes">
+        <article class="dish">
+          <figure class="shot shot--wide">
+            <!-- REMPLACER PAR : <img src="assets/img/biryani.jpg" alt="Biryani de poulet" width="900" height="600"> -->
+            <span class="shot__todo">
+              <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-camera"/></svg>
+              <span>Photo du biryani</span>
+            </span>
+          </figure>
+          <h3 class="t-item">Biryani de poulet</h3>
+          <p class="mark-veg" data-veg="non">Non-végétarien</p>
+          <p>Riz basmati safrané, poulet mariné au yaourt, oignons frits.</p>
+        </article>
+
+        <article class="dish">
+          <figure class="shot shot--wide">
+            <!-- REMPLACER PAR : <img src="assets/img/dal-makhani.jpg" alt="Dal makhani" width="900" height="600"> -->
+            <span class="shot__todo">
+              <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-camera"/></svg>
+              <span>Photo du dal makhani</span>
+            </span>
+          </figure>
+          <h3 class="t-item">Dal makhani</h3>
+          <p class="mark-veg" data-veg="oui">Végétarien</p>
+          <p>Lentilles noires mijotées toute la nuit, beurre, crème, kasoori methi.</p>
+        </article>
+
+        <article class="dish">
+          <figure class="shot shot--wide">
+            <!-- REMPLACER PAR : <img src="assets/img/curry-agneau.jpg" alt="Curry d’agneau" width="900" height="600"> -->
+            <span class="shot__todo">
+              <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-camera"/></svg>
+              <span>Photo du curry d’agneau</span>
+            </span>
+          </figure>
+          <h3 class="t-item">Curry d’agneau</h3>
+          <p class="mark-veg" data-veg="non">Non-végétarien</p>
+          <p>Agneau local, sauce tomate-cardamome, riz parfumé.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HORAIRES ---------------------------------------------------------- -->
+  <div class="blockprint" aria-hidden="true"></div>
+  <section id="horaires" class="band band--leaf">
+    <div class="wrap">
+      <h2 class="t-sect">Quand venir</h2>
+      <p class="lede muted" style="margin-top:.85rem">Richard cuisine sur quatre services par semaine,
+        plus le samedi soir au restaurant.</p>
+
+      <ul class="hours">
+        <li data-jour="2">
+          <span class="hours__day">Mardi</span>
+          <span class="hours__time">12h — 14h</span>
+        </li>
+        <li data-jour="4">
+          <span class="hours__day">Jeudi</span>
+          <span class="hours__time">18h — 20h30</span>
+        </li>
+        <li data-jour="5">
+          <span class="hours__day">Vendredi</span>
+          <span class="hours__time">12h — 14h</span>
+        </li>
+        <li data-jour="6">
+          <span class="hours__day">Samedi</span>
+          <span class="hours__time">au restaurant</span>
+          <span class="hours__note">Richard cuisine au Tikidiniteur, 34 rue Paul Bert.</span>
+        </li>
+        <li data-jour="0">
+          <span class="hours__day">Dimanche</span>
+          <span class="hours__time">18h — 20h30</span>
+        </li>
+      </ul>
+
+      <p class="muted" style="margin-top:1.75rem;max-width:52ch">
+        À emporter ou à déguster sur place. Livraison à domicile sur Nantes
+        à partir de 10 lunch boxes commandées.
+      </p>
+
+      <div class="stack">
+        <a class="btn btn--line" href="tel:+33665757718">
+          <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>
+          Réserver sa lunch box
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RICHARD ----------------------------------------------------------- -->
+  <section id="richard" class="band">
+    <div class="wrap contact__grid">
+      <figure class="shot shot--face">
+        <!-- REMPLACER PAR : <img src="assets/img/richard.jpg" alt="Richard Balaraj dans sa cuisine" width="800" height="800"> -->
+        <span class="shot__todo">
+          <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-camera"/></svg>
+          <span>Portrait de Richard</span>
+        </span>
+      </figure>
+      <div>
+        <h2 class="t-sect">Richard Balaraj</h2>
+        <div class="prose" style="display:grid;gap:1rem;margin-top:1.25rem">
+          <p>Je cuisine chaque lunch box à la commande, avec des épices que je choisis
+            moi-même, des légumes bio de la région et de la viande locale.</p>
+          <p class="muted">Pas de chichi : du goût, du parfum, et la générosité d’une vraie
+            cuisine de famille. Végétarien ou non, c’est vous qui décidez.</p>
+        </div>
+        <div class="stack">
+          <a class="btn btn--go" href="tel:+33665757718">
+            <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>
+            Lui parler
+          </a>
+          <a class="btn btn--wa" href="https://wa.me/33665757718">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVIS -------------------------------------------------------------- -->
+  <section id="avis" class="band band--paper">
+    <div class="wrap">
+      <h2 class="t-sect">Ce qu’en disent les clients</h2>
+
+      <div class="reviews">
+        <figure class="review">
+          <blockquote class="t-quote">« Merci Richard, on s’est régalé avec ta lunch box ! Les senteurs
+            et le piment étaient là, génial. On reviendra. »</blockquote>
+          <figcaption>
+            <span class="stars" aria-label="5 étoiles sur 5">
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+            </span>
+            Fabrice F., sur Google
+          </figcaption>
+        </figure>
+
+        <figure class="review">
+          <blockquote class="t-quote">« La meilleure cuisine indienne de Nantes. L’accueil est juste
+            magique, dépaysement assuré. »</blockquote>
+          <figcaption>
+            <span class="stars" aria-label="5 étoiles sur 5">
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+            </span>
+            Xav Lep, sur Google
+          </figcaption>
+        </figure>
+
+        <figure class="review">
+          <blockquote class="t-quote">« Cuisine riche, parfaitement épicée, ni trop ni pas assez, et
+            copieuse. Jus de curcuma offert en attendant la cuisson, c’est validé. »</blockquote>
+          <figcaption>
+            <span class="stars" aria-label="5 étoiles sur 5">
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+            </span>
+            Valentin Tch., sur Google
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- OÙ NOUS TROUVER --------------------------------------------------- -->
+  <section id="venir" class="band">
+    <div class="wrap">
+      <h2 class="t-sect">Où nous trouver</h2>
+
+      <div class="contact__grid" style="margin-top:clamp(1.75rem,4vw,2.5rem)">
+        <div>
+          <p class="t-item" style="font-family:var(--display)">2 rue de la Montagne<br>44100 Nantes</p>
+          <p class="muted" style="margin-top:.6rem">Quartier Dervallières — Zola.</p>
+
+          <div class="stack">
+            <a class="btn btn--go" href="tel:+33665757718">
+              <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>
+              06 65 75 77 18
+            </a>
+            <a class="btn btn--line" href="https://www.google.com/maps/dir/?api=1&amp;destination=2+rue+de+la+Montagne%2C+44100+Nantes" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-route"/></svg>
+              Itinéraire
+            </a>
+          </div>
+
+          <div class="note">
+            <h3>Un événement à régaler ?</h3>
+            <p class="muted">Mariages, anniversaires, baptêmes : appelez Richard, il s’occupe du reste.
+              Livraison sur Nantes à partir de 10 lunch boxes.</p>
+          </div>
+
+          <div class="note">
+            <h3>Le samedi soir</h3>
+            <p class="muted">Richard cuisine au restaurant Tikidiniteur, 34 rue Paul Bert à Nantes.</p>
+          </div>
+        </div>
+
+        <div class="map">
+          <iframe
+            title="Carte : 2 rue de la Montagne, 44100 Nantes"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-1.5845%2C47.2093%2C-1.5745%2C47.2148&amp;layer=mapnik&amp;marker=47.2120517%2C-1.5794874"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <p class="map__foot">
+            <span class="muted">Données © les contributeurs OpenStreetMap</span>
+            <a href="https://www.openstreetmap.org/?mlat=47.21205&amp;mlon=-1.57949#map=17/47.21205/-1.57949" target="_blank" rel="noopener">
+              Agrandir <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" style="display:inline-block;vertical-align:-1px"><use href="#i-ext"/></svg>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <p class="mark" style="display:block;margin-bottom:.6rem">The Lunch Box</p>
+        <p class="muted">Cuisine indienne faite maison,<br>à emporter à Nantes.</p>
+      </div>
+      <div>
+        <p class="label" style="color:#B9CCB7">Nous joindre</p>
+        <p style="margin-top:.6rem"><a href="tel:+33665757718">06 65 75 77 18</a></p>
+        <p><a href="https://wa.me/33665757718">WhatsApp</a></p>
+      </div>
+      <div>
+        <p class="label" style="color:#B9CCB7">Adresse</p>
+        <p style="margin-top:.6rem">2 rue de la Montagne<br>44100 Nantes</p>
+      </div>
+    </div>
+    <p class="foot__legal">© <span id="annee">2026</span> The Lunch Box · Richard Balaraj · Nantes</p>
+  </div>
+</footer>
+
+<!-- Barre d'action mobile : l'appel toujours à portée de pouce -->
+<nav class="callbar" aria-label="Actions rapides">
+  <a href="tel:+33665757718">
+    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>
+    Appeler
+  </a>
+  <a href="https://wa.me/33665757718">
+    <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
+    WhatsApp
+  </a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=2+rue+de+la+Montagne%2C+44100+Nantes" target="_blank" rel="noopener">
+    <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg>
+    Y aller
+  </a>
+</nav>
+
+<script>
+/* Ouvert / fermé en direct, calculé à l'heure de Paris.
+   Sans JavaScript, la pastille affiche déjà les jours de service : rien ne casse. */
+(function () {
+  var SERVICES = [
+    { jour: 2, de: 720, a: 840,  quand: 'mardi midi' },
+    { jour: 4, de: 1080, a: 1230, quand: 'jeudi soir' },
+    { jour: 5, de: 720, a: 840,  quand: 'vendredi midi' },
+    { jour: 0, de: 1080, a: 1230, quand: 'dimanche soir' }
+  ];
+  var INDEX = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+
+  function maintenant() {
+    var parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Europe/Paris', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false
+    }).formatToParts(new Date());
+    var get = function (t) { return (parts.find(function (p) { return p.type === t; }) || {}).value; };
+    var h = parseInt(get('hour'), 10) % 24;
+    return { jour: INDEX[get('weekday')], min: h * 60 + parseInt(get('minute'), 10) };
+  }
+
+  function hhmm(m) {
+    var h = Math.floor(m / 60), r = m % 60;
+    return r ? h + 'h' + (r < 10 ? '0' + r : r) : h + 'h';
+  }
+
+  var pastille = document.getElementById('statut');
+  var texte = pastille && pastille.querySelector('[data-statut-texte]');
+  if (!texte || typeof Intl === 'undefined' || !Intl.DateTimeFormat) return;
+
+  var t;
+  try { t = maintenant(); } catch (e) { return; }
+  if (t.jour === undefined || isNaN(t.min)) return;
+
+  /* Le service du jour en cours */
+  var i, s;
+  for (i = 0; i < SERVICES.length; i++) {
+    s = SERVICES[i];
+    if (s.jour === t.jour && t.min >= s.de && t.min < s.a) {
+      pastille.setAttribute('data-open', 'oui');
+      texte.textContent = 'Ouvert maintenant · jusqu’à ' + hhmm(s.a);
+      return marquerAujourdhui(t.jour);
+    }
+    if (s.jour === t.jour && t.min >= s.de - 90 && t.min < s.de) {
+      pastille.setAttribute('data-open', 'bientot');
+      texte.textContent = 'Ouvre à ' + hhmm(s.de) + ' · commandes possibles dès maintenant';
+      return marquerAujourdhui(t.jour);
+    }
+  }
+
+  /* Samedi : Richard cuisine, mais au Tikidiniteur. Afficher « fermé » serait faux. */
+  if (t.jour === 6 && t.min >= 960) {
+    pastille.setAttribute('data-open', 'bientot');
+    texte.textContent = 'Ce soir, Richard cuisine au Tikidiniteur, 34 rue Paul Bert';
+    return marquerAujourdhui(t.jour);
+  }
+
+  /* Sinon : le prochain service, dans les sept jours qui viennent.
+     On compte en jours de calendrier, pas en minutes écoulées — sinon un
+     service à 46 h passe pour « demain ». */
+  var meilleur = null, ecart, jours;
+  for (i = 0; i < SERVICES.length; i++) {
+    s = SERVICES[i];
+    jours = (s.jour - t.jour + 7) % 7;
+    ecart = jours * 1440 + s.de - t.min;
+    if (ecart <= 0) { jours += 7; ecart += 7 * 1440; }
+    if (meilleur === null || ecart < meilleur.ecart) meilleur = { ecart: ecart, jours: jours, s: s };
+  }
+  if (meilleur) {
+    pastille.setAttribute('data-open', 'non');
+    if (meilleur.jours === 0) {
+      texte.textContent = 'Fermé · ouvre à ' + hhmm(meilleur.s.de);
+    } else {
+      var quand = meilleur.jours === 1
+        ? 'demain ' + (meilleur.s.de < 840 ? 'midi' : 'soir')
+        : meilleur.s.quand;
+      texte.textContent = 'Fermé · prochain service ' + quand + ' à ' + hhmm(meilleur.s.de);
+    }
+  }
+  marquerAujourdhui(t.jour);
+
+  function marquerAujourdhui(jour) {
+    var ligne = document.querySelector('.hours li[data-jour="' + jour + '"]');
+    if (ligne) ligne.setAttribute('data-today', '');
+  }
+})();
+
+document.getElementById('annee').textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
