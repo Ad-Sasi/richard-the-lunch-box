@@ -233,9 +233,9 @@ function V3Pattern(){
         <h2 style={{fontFamily:'Yatra One, cursive', fontSize:48, textAlign:'center', margin:'0 0 40px'}}>Ce qu'ils en disent</h2>
         <div style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:24}}>
           {[
-            {q:'Le meilleur biryani de Nantes, sans hésiter.', a:'Sophie · Nantes'},
-            {q:'80 lunch boxes pour notre mariage : tout le monde a adoré.', a:'Karim & Léa'},
-            {q:'Le curry végé est dingue. Je commande chaque vendredi.', a:'Thomas · Doulon'},
+            {q:'Merci Richard, on s’est régalé avec ta lunch box ! Les senteurs et le piment étaient là, génial. On reviendra.', a:'Fabrice F. · avis Google'},
+            {q:'La meilleure cuisine indienne de Nantes. L’accueil est juste magique, dépaysement assuré.', a:'Xav Lep · avis Google'},
+            {q:'Cuisine riche, parfaitement épicée, ni trop ni pas assez, et copieuse. Jus de curcuma offert en attendant la cuisson, c’est validé.', a:'Valentin Tch · avis Google'},
           ].map((t,i)=>(
             <div key={i} style={{
               background:'#fff', padding:'28px 26px', borderRadius:6,

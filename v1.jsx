@@ -171,9 +171,9 @@ function V1Flyer(){
         <h2 style={{fontFamily:'Caveat, cursive', fontSize:72, color:'#FBC36A', textAlign:'center', margin:'0 0 40px'}}>Ils ont goûté</h2>
         <div style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:24}}>
           {[
-            {q:'Le meilleur biryani de Nantes, sans hésiter. Richard est adorable en plus.', a:'Sophie · Nantes centre'},
-            {q:'On a commandé pour notre mariage : 80 lunch boxes, tout le monde a adoré.', a:'Karim & Léa'},
-            {q:'Le curry végétarien est dingue. Je commande presque tous les vendredis.', a:'Thomas · Doulon'},
+            {q:'Merci Richard, on s’est régalé avec ta lunch box ! Les senteurs et le piment étaient là, génial. On reviendra.', a:'Fabrice F. · avis Google'},
+            {q:'La meilleure cuisine indienne de Nantes. L’accueil est juste magique, dépaysement assuré.', a:'Xav Lep · avis Google'},
+            {q:'Cuisine riche, parfaitement épicée, ni trop ni pas assez, et copieuse. Jus de curcuma offert en attendant la cuisson, c’est validé.', a:'Valentin Tch · avis Google'},
           ].map((t,i)=>(
             <div key={i} style={{
               background:'#fff', color:ink, padding:'30px 26px', borderRadius:14,
