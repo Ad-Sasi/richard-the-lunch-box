@@ -49,9 +49,10 @@
       "@type": "MenuSection",
       "name": "Lunch box",
       "hasMenuItem": [
-        { "@type": "MenuItem", "name": "Biryani de poulet", "description": "Riz basmati safrané, poulet mariné au yaourt, oignons frits." },
-        { "@type": "MenuItem", "name": "Dal makhani", "description": "Lentilles noires mijotées toute la nuit, beurre, crème, kasoori methi.", "suitableForDiet": "https://schema.org/VegetarianDiet" },
-        { "@type": "MenuItem", "name": "Curry d’agneau", "description": "Agneau local, sauce tomate-cardamome, riz parfumé." }
+        { "@type": "MenuItem", "name": "Végétarien", "description": "Lentilles et plusieurs légumes, servi avec du riz.", "suitableForDiet": "https://schema.org/VegetarianDiet" },
+        { "@type": "MenuItem", "name": "Boulettes de bœuf", "description": "Boulettes de bœuf épicées, servies avec du riz." },
+        { "@type": "MenuItem", "name": "Saucisses fumées", "description": "Saucisses fumées, servies avec du riz." },
+        { "@type": "MenuItem", "name": "Poulet", "description": "Poulet, servi avec du riz." }
       ]
     }
   }
@@ -146,47 +147,60 @@
   <section id="carte" class="band band--paper">
     <div class="wrap">
       <h2 class="t-sect">Ce que Richard cuisine</h2>
-      <p class="lede muted" style="margin-top:.85rem">La carte change selon les saisons.
-        Chaque plat existe en version végétarienne ou non.</p>
+      <p class="lede muted" style="margin-top:.85rem">Toujours les quatre mêmes plats, sur une base
+        commune de légumes, de sauce et d’épices — refaite à chaque fois.</p>
 
       <div class="dishes">
         <article class="dish">
           <figure class="shot shot--wide">
-            <!-- REMPLACER PAR : <img src="assets/img/biryani.jpg" alt="Biryani de poulet" width="900" height="600"> -->
+            <!-- REMPLACER PAR : <img src="assets/img/vegetarien.jpg" alt="Plat végétarien, lentilles et légumes" width="900" height="600"> -->
             <span class="shot__todo">
               <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-camera"/></svg>
-              <span>Photo du biryani</span>
+              <span>Photo du plat végétarien</span>
             </span>
           </figure>
-          <h3 class="t-item">Biryani de poulet</h3>
-          <p class="mark-veg" data-veg="non">Non-végétarien</p>
-          <p>Riz basmati safrané, poulet mariné au yaourt, oignons frits.</p>
-        </article>
-
-        <article class="dish">
-          <figure class="shot shot--wide">
-            <!-- REMPLACER PAR : <img src="assets/img/dal-makhani.jpg" alt="Dal makhani" width="900" height="600"> -->
-            <span class="shot__todo">
-              <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-camera"/></svg>
-              <span>Photo du dal makhani</span>
-            </span>
-          </figure>
-          <h3 class="t-item">Dal makhani</h3>
+          <h3 class="t-item">Végétarien</h3>
           <p class="mark-veg" data-veg="oui">Végétarien</p>
-          <p>Lentilles noires mijotées toute la nuit, beurre, crème, kasoori methi.</p>
+          <p>Lentilles et plusieurs légumes, servi avec du riz.</p>
         </article>
 
         <article class="dish">
           <figure class="shot shot--wide">
-            <!-- REMPLACER PAR : <img src="assets/img/curry-agneau.jpg" alt="Curry d’agneau" width="900" height="600"> -->
+            <!-- REMPLACER PAR : <img src="assets/img/boeuf.jpg" alt="Boulettes de bœuf épicées" width="900" height="600"> -->
             <span class="shot__todo">
               <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-camera"/></svg>
-              <span>Photo du curry d’agneau</span>
+              <span>Photo des boulettes de bœuf</span>
             </span>
           </figure>
-          <h3 class="t-item">Curry d’agneau</h3>
+          <h3 class="t-item">Boulettes de bœuf</h3>
           <p class="mark-veg" data-veg="non">Non-végétarien</p>
-          <p>Agneau local, sauce tomate-cardamome, riz parfumé.</p>
+          <p>Boulettes de bœuf épicées, servies avec du riz.</p>
+        </article>
+
+        <article class="dish">
+          <figure class="shot shot--wide">
+            <!-- REMPLACER PAR : <img src="assets/img/saucisses.jpg" alt="Saucisses fumées" width="900" height="600"> -->
+            <span class="shot__todo">
+              <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-camera"/></svg>
+              <span>Photo des saucisses fumées</span>
+            </span>
+          </figure>
+          <h3 class="t-item">Saucisses fumées</h3>
+          <p class="mark-veg" data-veg="non">Non-végétarien</p>
+          <p>Saucisses fumées, servies avec du riz.</p>
+        </article>
+
+        <article class="dish">
+          <figure class="shot shot--wide">
+            <!-- REMPLACER PAR : <img src="assets/img/poulet.jpg" alt="Poulet, servi avec du riz" width="900" height="600"> -->
+            <span class="shot__todo">
+              <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-camera"/></svg>
+              <span>Photo du poulet</span>
+            </span>
+          </figure>
+          <h3 class="t-item">Poulet</h3>
+          <p class="mark-veg" data-veg="non">Non-végétarien</p>
+          <p>Poulet, servi avec du riz.</p>
         </article>
       </div>
     </div>

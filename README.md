@@ -35,17 +35,19 @@ Aucun script tiers, aucun traceur : il n'y a rien à faire accepter au visiteur.
 
 ## Ce qu'il reste à faire
 
-**Les photos.** Cinq emplacements attendent un fichier. Chacun est marqué dans
-`index.html` par un commentaire `REMPLACER PAR` juste au-dessus, avec la balise
-`<img>` déjà écrite :
+**Les photos.** Ces emplacements attendent un fichier. Chacun est marqué dans le
+HTML par un commentaire `REMPLACER PAR` juste au-dessus, avec la balise `<img>`
+déjà écrite :
 
 | Fichier attendu | Où | Format |
 |---|---|---|
 | `assets/img/lunchbox.jpg` | accueil | portrait 4:5 |
-| `assets/img/biryani.jpg` | la carte | paysage 3:2 |
-| `assets/img/dal-makhani.jpg` | la carte | paysage 3:2 |
-| `assets/img/curry-agneau.jpg` | la carte | paysage 3:2 |
+| `assets/img/vegetarien.jpg` | la carte | paysage 3:2 |
+| `assets/img/boeuf.jpg` | la carte | paysage 3:2 |
+| `assets/img/saucisses.jpg` | la carte | paysage 3:2 |
+| `assets/img/poulet.jpg` | la carte | paysage 3:2 |
 | `assets/img/richard.jpg` | portrait | carré 1:1 |
+| `assets/img/camion.jpg` | food-truck.html, accueil | portrait 4:5 |
 
 Viser 1600 px de large maximum et moins de 300 Ko par photo.
 
