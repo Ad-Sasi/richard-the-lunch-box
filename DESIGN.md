@@ -74,8 +74,10 @@ des horaires. Sans JavaScript, la pastille affiche les jours de service : rien n
 
 Rien d'autre à réécrire.
 
-**Exception : `food-truck.html`.** Cette page garde volontairement le vert par
-défaut, sans `data-brand="truck"` — un seul Richard, une seule identité, pas de
-sous-marque à distinguer visuellement. La variante violette `[data-brand="truck"]`
-reste dans `site.css` pour un usage futur si un jour ça se justifie, mais n'est
-utilisée nulle part actuellement.
+**`food-truck.html`** utilise `data-brand="truck"` : le violet (`--truck` /
+`--truck-deep`, jetons fixes en tête de `site.css`) remplace `--brand` sur
+cette page, pour qu'elle se distingue au premier coup d'œil du point fixe —
+même Richard, mais une activité qu'on identifie vite. Les liens croisés entre
+les deux pages (`.nav--truck` sur « Le camion », `.nav--leaf` sur « Le point
+fixe ») reprennent la couleur *fixe* de la page visée plutôt que `--brand` de
+la page courante, pour qu'on la reconnaisse avant même de cliquer.

@@ -22,6 +22,11 @@
   --leaf-deep:   #1B3A1E;
   --leaf-line:   #6E9370;
 
+  /* Le camion — une identité à part, fixe (indépendante de --brand) pour
+     pouvoir signaler « le camion » même depuis une page qui reste verte. */
+  --truck:       #6B3FA0;
+  --truck-deep:  #3F2361;
+
   /* Curcuma — chiffres, marques, filets. Jamais du texte courant sur crème. */
   --turmeric:    #E3A008;   /* aplats, pastilles, filets */
   --turmeric-up: #F0C05A;   /* le même or, éclairci pour rester lisible sur le vert */
@@ -569,7 +574,15 @@ li { list-style: none; }
    <html lang="fr" data-brand="jus"> ou data-brand="truck" */
 
 [data-brand="jus"]   { --brand: #1F7A6B; --brand-deep: #12483F; --turmeric: #F2B705; }
-[data-brand="truck"] { --brand: #6B3FA0; --brand-deep: #3F2361; }
+[data-brand="truck"] { --brand: var(--truck); --brand-deep: var(--truck-deep); }
+
+/* Lien croisé vers l'autre page, dans le nav : coloré avec l'identité de la
+   page visée (fixe, elle ne suit pas --brand de la page courante), pour
+   qu'on la reconnaisse avant même de cliquer. */
+.nav a.nav--truck { color: var(--truck); }
+.nav a.nav--truck:hover { border-bottom-color: var(--truck); }
+.nav a.nav--leaf { color: var(--leaf); }
+.nav a.nav--leaf:hover { border-bottom-color: var(--leaf); }
 
 /* --- 18. Impression ------------------------------------------------------ */
 
