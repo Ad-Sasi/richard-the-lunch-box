@@ -244,7 +244,7 @@ li { list-style: none; }
 @media (min-width: 62rem) {
   .nav {
     display: flex;
-    gap: 1.9rem;
+    gap: clamp(1.1rem, 1.9vw, 1.9rem);
     font-size: .875rem;
     font-weight: 500;
   }
@@ -252,6 +252,7 @@ li { list-style: none; }
     text-decoration: none;
     padding-block: .6rem;
     border-bottom: 1.5px solid transparent;
+    white-space: nowrap;
     transition: border-color .2s var(--ease), color .2s var(--ease);
   }
   .nav a:hover { border-bottom-color: var(--chili); }
@@ -578,11 +579,23 @@ li { list-style: none; }
 
 /* Lien croisé vers l'autre page, dans le nav : coloré avec l'identité de la
    page visée (fixe, elle ne suit pas --brand de la page courante), pour
-   qu'on la reconnaisse avant même de cliquer. */
+   qu'on la reconnaisse avant même de cliquer. En gras et détaché des ancres
+   de la page par un filet, avec son icône : ce n'est pas une section qu'on
+   déroule, c'est une porte vers l'autre page. */
+.nav a.nav--truck,
+.nav a.nav--leaf {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-weight: 700;
+  padding-left: .9rem;
+  border-left: 1px solid var(--paper-edge);
+}
+.nav a.nav--truck svg, .nav a.nav--leaf svg { flex: 0 0 auto; }
 .nav a.nav--truck { color: var(--truck); }
-.nav a.nav--truck:hover { border-bottom-color: var(--truck); }
+.nav a.nav--truck:hover { border-bottom-color: var(--truck); color: var(--truck-deep); }
 .nav a.nav--leaf { color: var(--leaf); }
-.nav a.nav--leaf:hover { border-bottom-color: var(--leaf); }
+.nav a.nav--leaf:hover { border-bottom-color: var(--leaf); color: var(--leaf-deep); }
 
 /* --- 18. Impression ------------------------------------------------------ */
 
