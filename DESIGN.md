@@ -73,3 +73,9 @@ des horaires. Sans JavaScript, la pastille affiche les jours de service : rien n
 3. Ajuster `[data-brand="…"]` en fin de `site.css` si la teinte doit bouger.
 
 Rien d'autre à réécrire.
+
+**Exception : `food-truck.html`.** Cette page garde volontairement le vert par
+défaut, sans `data-brand="truck"` — un seul Richard, une seule identité, pas de
+sous-marque à distinguer visuellement. La variante violette `[data-brand="truck"]`
+reste dans `site.css` pour un usage futur si un jour ça se justifie, mais n'est
+utilisée nulle part actuellement.

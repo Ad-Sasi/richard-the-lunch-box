@@ -9,7 +9,8 @@ HTML et CSS, rien d'autre. Pas de build, pas de framework, pas de dépendance à
 installer. On ouvre `index.html` dans un navigateur et ça marche.
 
 ```
-index.html            la page
+index.html            le point fixe, 2 rue de la Montagne
+food-truck.html       le camion
 assets/css/site.css   toute la feuille de style (jetons + composants partagés)
 assets/img/           les photos (à remplir)
 DESIGN.md             les décisions de design, à lire avant d'ajouter une page
