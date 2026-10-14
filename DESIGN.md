@@ -81,3 +81,20 @@ même Richard, mais une activité qu'on identifie vite. Les liens croisés entre
 les deux pages (`.nav--truck` sur « Le camion », `.nav--leaf` sur « Le point
 fixe ») reprennent la couleur *fixe* de la page visée plutôt que `--brand` de
 la page courante, pour qu'on la reconnaisse avant même de cliquer.
+
+## Mise à jour du 14 octobre 2026
+
+- **Plus de beige** : Richard n'aime pas le beige. Le fond passe en blanc chaud
+  (`--paper: #FFFDFB`), la couleur vient des aplats de marque.
+- **Rue de la Montagne et la carte : rose rani** (`--rani: #B8135F`), bandeau d'accueil
+  plein (`.splash`). Le vert feuille et le violet du camion sont abandonnés.
+- **Traiteur & food truck : jaune camionnette** (`data-brand="jaune"`), règles
+  déplacées de la page vers la fin de `site.css`.
+- **Les jus : indigo** (`data-brand="jus"`), le cadre des étiquettes ; chaque jus a
+  sa section dans la couleur de son étiquette (`.juice--amour`, `--coeur`, `--cleaner`).
+- **Une seule couleur d'action par page** : `--action` (rani, encre sur jaune, indigo).
+  Sur un aplat de marque, le bouton plein s'inverse en blanc.
+- **Le menu liste les pages**, plus les ancres : quatre pages, visibles aussi sur
+  téléphone (deuxième ligne, intitulés raccourcis sous 34rem).
+- **Logo NK** découpé de la photo du camion : `assets/img/logo-nk.jpg`, favicons
+  `favicon.ico`, `favicon-48.png`, `apple-touch-icon.png`.
