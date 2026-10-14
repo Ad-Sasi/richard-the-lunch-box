@@ -61,8 +61,7 @@ Le titre plafonne à 6rem et court sur toute la largeur — c'est la manchette.
 ## Le moment vivant
 
 La pastille d'ouverture calcule en direct, à l'heure de Paris, si Richard cuisine —
-et sinon quand il recuisine. Le samedi soir elle renvoie vers le Tikidiniteur au lieu
-d'afficher « fermé », ce qui serait faux. La ligne du jour est marquée dans le tableau
+et sinon quand il recuisine. La ligne du jour est marquée dans le tableau
 des horaires. Sans JavaScript, la pastille affiche les jours de service : rien ne casse.
 
 ## Ajouter une page (jus, food-truck)

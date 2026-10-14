@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Lunch Box — cuisine indienne à emporter à Nantes, rue de la Montagne</title>
+<title>The Lunch Box, cuisine indienne à emporter à Nantes, rue de la Montagne</title>
 <meta name="description" content="Richard cuisine chaque lunch box à la commande : végétarienne ou non, avec riz ou semoule. À partir de 8 €, 2 rue de la Montagne, 44100 Nantes. Traiteur, catering et food truck. 06 65 75 77 18.">
 <link rel="canonical" href="https://thelunchbox-nantes.fr/">
 <meta name="theme-color" content="#B8135F">
@@ -15,14 +15,14 @@
 <meta property="og:type" content="restaurant">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="The Lunch Box">
-<meta property="og:title" content="The Lunch Box — cuisine indienne à emporter à Nantes">
+<meta property="og:title" content="The Lunch Box, cuisine indienne à emporter à Nantes">
 <meta property="og:description" content="La cuisine indienne de Richard, à emporter rue de la Montagne. À partir de 8 €.">
 <meta property="og:image" content="https://thelunchbox-nantes.fr/assets/img/lunchbox.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=2026-10-14c">
+<link rel="stylesheet" href="assets/css/site.css?v=2026-10-14d">
 
 <script type="application/ld+json">
 {
@@ -112,7 +112,7 @@
 
     <div class="hero__grid">
       <div>
-        <p class="lede muted">Richard cuisine chaque lunch box à la commande — végétarienne ou non,
+        <p class="lede muted">Richard cuisine chaque lunch box à la commande, végétarienne ou non,
           légumes bio et viande locale.</p>
 
         <dl class="facts">
@@ -219,32 +219,31 @@
       <ul class="hours">
         <li data-jour="1">
           <span class="hours__day">Lundi</span>
-          <span class="hours__time">12h — 14h<small>18h — 21h</small></span>
+          <span class="hours__time">12h à 14h<small>18h à 21h</small></span>
         </li>
         <li data-jour="2">
           <span class="hours__day">Mardi</span>
-          <span class="hours__time">12h — 14h<small>18h — 21h</small></span>
+          <span class="hours__time">12h à 14h<small>18h à 21h</small></span>
         </li>
         <li data-jour="3">
           <span class="hours__day">Mercredi</span>
-          <span class="hours__time">13h — 14h<small>18h — 21h</small></span>
+          <span class="hours__time">13h à 14h<small>18h à 21h</small></span>
         </li>
         <li data-jour="4">
           <span class="hours__day">Jeudi</span>
-          <span class="hours__time">12h — 14h<small>18h — 21h</small></span>
+          <span class="hours__time">12h à 14h<small>18h à 21h</small></span>
         </li>
         <li data-jour="5">
           <span class="hours__day">Vendredi</span>
-          <span class="hours__time">12h — 14h<small>18h — 21h</small></span>
+          <span class="hours__time">12h à 14h<small>18h à 21h</small></span>
         </li>
         <li data-jour="6" data-off>
           <span class="hours__day">Samedi</span>
           <span class="hours__time">fermé</span>
-          <span class="hours__note">Le samedi soir, Richard cuisine au restaurant Tikidiniteur, 34 rue Paul Bert.</span>
         </li>
         <li data-jour="0">
           <span class="hours__day">Dimanche</span>
-          <span class="hours__time">12h — 16h<small>18h — 21h</small></span>
+          <span class="hours__time">12h à 16h<small>18h à 21h</small></span>
         </li>
       </ul>
 
@@ -352,7 +351,7 @@
       <div class="contact__grid" style="margin-top:clamp(1.75rem,4vw,2.5rem)">
         <div>
           <p class="t-item" style="font-family:var(--display)">2 rue de la Montagne<br>44100 Nantes</p>
-          <p class="muted" style="margin-top:.6rem">Quartier Dervallières — Zola.</p>
+          <p class="muted" style="margin-top:.6rem">Quartier Dervallières-Zola.</p>
 
           <div class="stack">
             <a class="btn btn--go" href="tel:+33665757718">
@@ -493,15 +492,8 @@
     }
   }
 
-  /* Samedi soir : Richard cuisine, mais au Tikidiniteur. */
-  if (t.jour === 6 && t.min >= 960) {
-    pastille.setAttribute('data-open', 'bientot');
-    texte.textContent = 'Ce soir, Richard cuisine au Tikidiniteur, 34 rue Paul Bert';
-    return marquerAujourdhui(t.jour);
-  }
-
   /* Sinon : le prochain service, dans les sept jours qui viennent.
-     On compte en jours de calendrier, pas en minutes écoulées — sinon un
+     On compte en jours de calendrier, pas en minutes écoulées, sinon un
      service à 46 h passe pour « demain ». */
   var meilleur = null, ecart, jours;
   for (i = 0; i < SERVICES.length; i++) {
